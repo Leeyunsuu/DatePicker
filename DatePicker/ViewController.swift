@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
   let timeSelector: Selector = #selector(ViewController.updateTime)
   let interval = 1.0
-  var alarmTime: String?
+  var alarmTime: String? //선택시간
   var count = 0
 
   @IBOutlet var lbCurrentTime: UILabel!
@@ -33,8 +33,8 @@ class ViewController: UIViewController {
     formatter.dateFormat = "hh:mm aaa"
     let currentTime = formatter.string(from: date as Date)
     
-    if (alarmTime == currentTime) {
-      view.backgroundColor = UIColor.red
+    if (alarmTime == currentTime) //선택시간이 현재시간과 같을 때
+    {       view.backgroundColor = UIColor.red
     }
     else{
       view.backgroundColor = UIColor.white
